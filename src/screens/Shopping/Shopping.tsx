@@ -42,7 +42,7 @@ export const Shopping = ({ category, onBack, onCartOpen }: ShoppingProps): JSX.E
         id: 4,
         name: "ISOPURE",
         price: "$1199",
-        image: "/image.png",
+        image: "/image.png", 
       },
     ],
     Creatine: [
