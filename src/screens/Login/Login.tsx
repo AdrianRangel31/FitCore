@@ -55,11 +55,7 @@ export const Login = ({ onLoginSuccess }: LoginProps): JSX.Element => {
         Don´t have an account?
       </p>
 
-      <img
-        className="absolute top-12 left-[47px] w-[346px] h-[130px] object-contain"
-        alt="Logo new"
-        src=""
-      />
+
 
       <div className="inline-flex top-[410px] left-[47px] bg-white rounded-[50px] items-center justify-center gap-2.5 p-2.5 absolute">
         <Input
