@@ -24,7 +24,7 @@ export const Shopping = ({ category, onBack, onCartOpen }: ShoppingProps): JSX.E
         id: 1,
         name: "WHEY PROTEIN",
         price: "$899",
-        image: "/image.png",
+        image: "/Captura de pantalla 2025-11-12 084600.png",
       },
       {
         id: 2,
