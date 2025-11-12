@@ -182,7 +182,7 @@ export const Shopping = ({ category, onBack, onCartOpen }: ShoppingProps): JSX.E
           >
             <div className="absolute top-3 left-3 bg-white bg-opacity-90 rounded px-3 py-1 z-10">
               <span className="text-[#9a2626] font-bold text-xs">
-                Add to cart
+                
               </span>
             </div>
 
