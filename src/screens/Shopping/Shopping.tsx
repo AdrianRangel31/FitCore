@@ -2,13 +2,21 @@ import React, { useState } from "react";
 import { Menu, ShoppingCart, ChevronLeft } from "lucide-react";
 import { Button } from "../../components/ui/button";
 
+interface Product {
+  id: number;
+  name: string;
+  price: string;
+  image: string;
+}
+
 interface ShoppingProps {
   category: string;
   onBack: () => void;
+  onCartOpen: (items: Product[]) => void;
 }
 
-export const Shopping = ({ category, onBack }: ShoppingProps): JSX.Element => {
-  const [cart, setCart] = useState<number[]>([]);
+export const Shopping = ({ category, onBack, onCartOpen }: ShoppingProps): JSX.Element => {
+  const [cartItems, setCartItems] = useState<number[]>([]);
 
   const products = {
     Protein: [
@@ -121,11 +129,18 @@ export const Shopping = ({ category, onBack }: ShoppingProps): JSX.Element => {
     products[category as keyof typeof products] || products.Protein;
 
   const toggleCart = (productId: number) => {
-    setCart((prev) =>
+    setCartItems((prev) =>
       prev.includes(productId)
         ? prev.filter((id) => id !== productId)
         : [...prev, productId]
     );
+  };
+
+  const handleCartClick = () => {
+    const selectedProducts = categoryProducts.filter((product) =>
+      cartItems.includes(product.id)
+    );
+    onCartOpen(selectedProducts);
   };
 
   return (
@@ -139,7 +154,17 @@ export const Shopping = ({ category, onBack }: ShoppingProps): JSX.Element => {
             <ChevronLeft className="w-6 h-6 text-white" />
           </button>
           <h1 className="text-2xl font-bold text-white">Shopping</h1>
-          <ShoppingCart className="w-6 h-6 text-white" />
+          <button
+            onClick={handleCartClick}
+            className="hover:opacity-80 transition-opacity relative"
+          >
+            <ShoppingCart className="w-6 h-6 text-white" />
+            {cartItems.length > 0 && (
+              <span className="absolute -top-2 -right-2 bg-white text-[#9a2626] rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">
+                {cartItems.length}
+              </span>
+            )}
+          </button>
         </div>
       </div>
 
@@ -181,12 +206,12 @@ export const Shopping = ({ category, onBack }: ShoppingProps): JSX.Element => {
             <button
               onClick={() => toggleCart(product.id)}
               className={`w-full py-2 px-3 font-bold text-sm rounded-b-3xl transition-all ${
-                cart.includes(product.id)
+                cartItems.includes(product.id)
                   ? "bg-white text-[#9a2626]"
                   : "bg-[#7a1f1f] text-white hover:bg-[#6a1a1a]"
               }`}
             >
-              {cart.includes(product.id) ? "✓ In Cart" : "Add to cart"}
+              {cartItems.includes(product.id) ? "✓ In Cart" : "Add to cart"}
             </button>
           </div>
         ))}
