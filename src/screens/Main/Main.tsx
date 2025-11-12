@@ -5,9 +5,10 @@ import { Input } from "../../components/ui/input";
 
 interface MainProps {
   onLogout: () => void;
+  onCategorySelect: (category: string) => void;
 }
 
-export const Main = ({ onLogout }: MainProps): JSX.Element => {
+export const Main = ({ onLogout, onCategorySelect }: MainProps): JSX.Element => {
   const [currentOfferIndex, setCurrentOfferIndex] = useState(0);
 
   const offers = [
@@ -103,13 +104,14 @@ export const Main = ({ onLogout }: MainProps): JSX.Element => {
 
       <div className="grid grid-cols-2 gap-4 px-4 pb-8">
         {categories.map((category) => (
-          <div
+          <button
             key={category.name}
+            onClick={() => onCategorySelect(category.name)}
             className="bg-[#9a2626] rounded-3xl p-6 text-center hover:bg-[#8a1f1f] transition-colors cursor-pointer"
           >
             <div className="text-4xl mb-2">{category.icon}</div>
             <h3 className="text-white font-bold text-lg">{category.name}</h3>
-          </div>
+          </button>
         ))}
       </div>
     </main>
