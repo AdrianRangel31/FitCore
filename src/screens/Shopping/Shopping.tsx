@@ -181,9 +181,7 @@ export const Shopping = ({ category, onBack, onCartOpen }: ShoppingProps): JSX.E
             className="bg-[#9a2626] rounded-3xl overflow-hidden flex flex-col relative"
           >
             <div className="absolute top-3 left-3 bg-white bg-opacity-90 rounded px-3 py-1 z-10">
-              <span className="text-[#9a2626] font-bold text-xs">
-                
-              </span>
+
             </div>
 
             <div className="bg-white rounded-3xl mx-3 mt-10 mb-3 flex-1 flex items-center justify-center p-3 min-h-[150px]">
