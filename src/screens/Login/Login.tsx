@@ -45,13 +45,19 @@ export const Login = ({ onLoginSuccess }: LoginProps): JSX.Element => {
         </span>
       </Button>
 
+      <Button className="flex w-[258px] h-[59px] top-[741px] left-[98px] bg-[#9a2626] rounded-[50px_0px_50px_0px] shadow-[10px_10px_4px_#00000040] items-center justify-center gap-2.5 p-2.5 absolute hover:bg-[#8a1f1f]">
+        <span className="relative w-fit mt-[-5.50px] mb-[-3.50px] [font-family:'Inter',Helvetica] font-normal text-white text-[40px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
+          Sign in
+        </span>
+      </Button>
+
       <a
         href="https://adrianrv1.github.io/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex w-[258px] h-[59px] top-[741px] left-[98px] bg-[#9a2626] rounded-[50px_0px_50px_0px] shadow-[10px_10px_4px_#00000040] items-center justify-center gap-2.5 p-2.5 absolute hover:bg-[#8a1f1f] transition-colors"
+        className="flex w-[150px] h-[40px] top-[820px] left-[148px] bg-[#9a2626] rounded-[50px_0px_50px_0px] shadow-[10px_10px_4px_#00000040] items-center justify-center gap-2.5 p-2.5 absolute hover:bg-[#8a1f1f] transition-colors"
       >
-        <span className="relative w-fit mt-[-5.50px] mb-[-3.50px] [font-family:'Inter',Helvetica] font-normal text-white text-[40px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
+        <span className="relative w-fit [font-family:'Inter',Helvetica] font-normal text-white text-sm text-center tracking-[0] leading-[normal] whitespace-nowrap">
           INDEX PARCIAL 3
         </span>
       </a>
