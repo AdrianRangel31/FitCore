@@ -29,8 +29,10 @@ export const Login = ({ onLoginSuccess }: LoginProps): JSX.Element => {
   ];
 
   const handleLogin = () => {
-    if (username.trim() && password.trim()) {
+    if (username === "admin" && password === "admin") {
       onLoginSuccess();
+    } else {
+      alert("Usuario o contraseña invalidos.");
     }
   };
 
